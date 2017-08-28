@@ -1,1 +1,52 @@
-Hello World
+<!DOCTYPE html>
+<html>
+<head>DeviceMotionEvent and DeviceOrientationEvent demo</head>
+<body>
+<h2>DeviceMotionEvent.acceleration:</h2>
+<ul>
+	<li>x: <id = "device-motion-acceleration-x"></li>
+	<li>y: <id = "device-motion-acceleration-y"></li>
+	<li>z: <id = "device-motion-acceleration-z"></li>
+</ul>
+<h2>DeviceMotionEvent.accelerationIncludingGravigy:</h2>
+<ul>
+	<li>x: <id = "device-motion-acceleration-including-gravity-x"></li>
+	<li>y: <id = "device-motion-acceleration-including-gravity-y"></li>
+	<li>z: <id = "device-motion-acceleration-including-gravity-z"></li>
+</ul>
+<h2>DeviceMotionEvent.rotationRate:</h2>
+<ul>
+	<li>alpha: <id = "device-motion-rotation-rate-alpha"></li>
+	<li>beta: <id = "device-motion-rotation-rate-beta"></li>
+	<li>gamma: <id = "device-motion-rotation-rate-gamma"></li>
+</ul>
+
+<script>
+var accelerationX = document.getElementById('device-motion-acceleration-x');
+var accelerationY = document.getElementById('device-motion-acceleration-y');
+var accelerationZ = document.getElementById('device-motion-acceleration-z');
+
+var accelerationIncludingGravityX = document.getElementById('device-motion-acceleration-including-gravity-x');
+var accelerationIncludingGravityY = document.getElementById('device-motion-acceleration-including-gravity-y');
+var accelerationIncludingGravityZ = document.getElementById('device-motion-acceleration-including-gravity-z');
+
+var rotationRateAlpha = document.getElementById('device-motion-rotation-rate-alpha');
+var rotationRateBeta = document.getElementById('device-motion-rotation-rate-beta');
+var rotationRateGamma = document.getElementById('device-motion-rotation-rate-gamma');
+
+window.addEventListener('devicemotion', event => {
+  accelerationX.textContent = event.acceleration.x;
+  accelerationY.textContent = event.acceleration.y;
+  accelerationZ.textContent = event.acceleration.z;
+
+  accelerationIncludingGravityX.textContent = event.accelerationIncludingGravigy.x;
+  accelerationIncludingGravityY.textContent = event.accelerationIncludingGravigy.y;
+  accelerationIncludingGravityZ.textContent = event.accelerationIncludingGravigy.z;
+
+  rotationRateAlpha.textContent = event.rotationRate.alpha;
+  rotationRateBeta.textContent = event.rotationRate.beta;
+  rotationRateGamma.textContent = event.rotationRate.gamma;
+});
+</script>
+</body>
+</html>
