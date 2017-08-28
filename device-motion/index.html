@@ -22,6 +22,13 @@
 </ul>
 
 <script>
+function displayNumber(number) {
+  if (number)
+  	return number.toFixed(3);
+  else
+  	return "no data";
+}
+
 var accelerationX = document.getElementById('device-motion-acceleration-x');
 var accelerationY = document.getElementById('device-motion-acceleration-y');
 var accelerationZ = document.getElementById('device-motion-acceleration-z');
@@ -35,17 +42,17 @@ var rotationRateBeta = document.getElementById('device-motion-rotation-rate-beta
 var rotationRateGamma = document.getElementById('device-motion-rotation-rate-gamma');
 
 window.addEventListener('devicemotion', event => {
-  accelerationX.textContent = event.acceleration.x;
-  accelerationY.textContent = event.acceleration.y;
-  accelerationZ.textContent = event.acceleration.z;
+  accelerationX.textContent = displayNumber(event.acceleration.x);
+  accelerationY.textContent = displayNumberevent.acceleration.y);
+  accelerationZ.textContent = displayNumberevent.acceleration.z);
 
-  accelerationIncludingGravityX.textContent = event.accelerationIncludingGravity.x;
-  accelerationIncludingGravityY.textContent = event.accelerationIncludingGravity.y;
-  accelerationIncludingGravityZ.textContent = event.accelerationIncludingGravity.z;
+  accelerationIncludingGravityX.textContent = displayNumber(event.accelerationIncludingGravity.x);
+  accelerationIncludingGravityY.textContent = displayNumber(event.accelerationIncludingGravity.y);
+  accelerationIncludingGravityZ.textContent = displayNumber(event.accelerationIncludingGravity.z);
 
-  rotationRateAlpha.textContent = event.rotationRate.alpha;
-  rotationRateBeta.textContent = event.rotationRate.beta;
-  rotationRateGamma.textContent = event.rotationRate.gamma;
+  rotationRateAlpha.textContent = displayNumber(event.rotationRate.alpha);
+  rotationRateBeta.textContent = displayNumber(event.rotationRate.beta);
+  rotationRateGamma.textContent = displayNumber(event.rotationRate.gamma);
 });
 </script>
 </body>
