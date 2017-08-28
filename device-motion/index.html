@@ -43,8 +43,8 @@ var rotationRateGamma = document.getElementById('device-motion-rotation-rate-gam
 
 window.addEventListener('devicemotion', event => {
   accelerationX.textContent = displayNumber(event.acceleration.x);
-  accelerationY.textContent = displayNumberevent.acceleration.y);
-  accelerationZ.textContent = displayNumberevent.acceleration.z);
+  accelerationY.textContent = displayNumber(event.acceleration.y);
+  accelerationZ.textContent = displayNumber(event.acceleration.z);
 
   accelerationIncludingGravityX.textContent = displayNumber(event.accelerationIncludingGravity.x);
   accelerationIncludingGravityY.textContent = displayNumber(event.accelerationIncludingGravity.y);
