@@ -8,12 +8,14 @@
 	<li>y: <span id = "device-motion-acceleration-y"></span></li>
 	<li>z: <span id = "device-motion-acceleration-z"></span></li>
 </ul>
+
 <h2>DeviceMotionEvent.accelerationIncludingGravity:</h2>
 <ul>
 	<li>x: <span id = "device-motion-acceleration-including-gravity-x"></span></li>
 	<li>y: <span id = "device-motion-acceleration-including-gravity-y"></span></li>
 	<li>z: <span id = "device-motion-acceleration-including-gravity-z"></span></li>
 </ul>
+
 <h2>DeviceMotionEvent.rotationRate:</h2>
 <ul>
 	<li>alpha: <span id = "device-motion-rotation-rate-alpha"></span></li>
@@ -21,10 +23,26 @@
 	<li>gamma: <span id = "device-motion-rotation-rate-gamma"></span></li>
 </ul>
 
+<h2>DeviceOrientationEvent:</h2>
+<ul>
+	<li>alpha: <span id = "device-orientation-alpha"></span></li>
+	<li>beta: <span id = "device-orientation-beta"></span></li>
+	<li>gamma: <span id = "device-orientation-gamma"></span></li>
+	<li>absolute: <span id = "device-orientation-absolute"></span></li>
+</ul>
+
+<h2>DeviceOrientationAbsoluteEvent:</h2>
+<ul>
+	<li>alpha: <span id = "device-orientation-absolute-alpha"></span></li>
+	<li>beta: <span id = "device-orientation-absolute-beta"></span></li>
+	<li>gamma: <span id = "device-orientation-absolute-gamma"></span></li>
+	<li>absolute: <span id = "device-orientation-absolute-absolute"></span></li>
+</ul>
+
 <script>
 function displayNumber(number) {
   if (number)
-  	return number.toFixed(3);
+  	return number.toFixed(2);
   else
   	return "no data";
 }
@@ -41,6 +59,16 @@ var rotationRateAlpha = document.getElementById('device-motion-rotation-rate-alp
 var rotationRateBeta = document.getElementById('device-motion-rotation-rate-beta');
 var rotationRateGamma = document.getElementById('device-motion-rotation-rate-gamma');
 
+var orientationAlpha = document.getElementById('device-orientation-alpha');
+var orientationBeta = document.getElementById('device-orientation-beta');
+var orientationGamma = document.getElementById('device-orientation-gamma');
+var orientationAbsolute = document.getElementById('device-orientation-absolute');
+
+var orientationAbsoluteAlpha = document.getElementById('device-orientation-absolute-alpha');
+var orientationAbsoluteBeta = document.getElementById('device-orientation-absolute-beta');
+var orientationAbsoluteGamma = document.getElementById('device-orientation-absolute-gamma');
+var orientationAbsoluteAbsolute = document.getElementById('device-orientation-absolute-absolute');
+
 window.addEventListener('devicemotion', event => {
   accelerationX.textContent = displayNumber(event.acceleration.x);
   accelerationY.textContent = displayNumber(event.acceleration.y);
@@ -53,6 +81,20 @@ window.addEventListener('devicemotion', event => {
   rotationRateAlpha.textContent = displayNumber(event.rotationRate.alpha);
   rotationRateBeta.textContent = displayNumber(event.rotationRate.beta);
   rotationRateGamma.textContent = displayNumber(event.rotationRate.gamma);
+});
+
+window.addEventListener('deviceorientation', event => {
+  orientationAlpha.textContent = displayNumber(event.alpha);
+  orientationBeta.textContent = displayNumber(event.beta);
+  orientationGamma.textContent = displayNumber(event.gamma);
+  orientationAbsolute.textContent = event.absolute;
+});
+
+window.addEventListener('deviceorientationabsolute', event => {
+  orientationAbsoluteAlpha.textContent = displayNumber(event.alpha);
+  orientationAbsoluteBeta.textContent = displayNumber(event.beta);
+  orientationAbsoluteGamma.textContent = displayNumber(event.gamma);
+  orientationAbsoluteAbsolute.textContent = event.absolute;
 });
 </script>
 </body>
