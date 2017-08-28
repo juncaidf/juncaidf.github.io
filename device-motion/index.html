@@ -8,7 +8,7 @@
 	<li>y: <span id = "device-motion-acceleration-y"></span></li>
 	<li>z: <span id = "device-motion-acceleration-z"></span></li>
 </ul>
-<h2>DeviceMotionEvent.accelerationIncludingGravigy:</h2>
+<h2>DeviceMotionEvent.accelerationIncludingGravity:</h2>
 <ul>
 	<li>x: <span id = "device-motion-acceleration-including-gravity-x"></span></li>
 	<li>y: <span id = "device-motion-acceleration-including-gravity-y"></span></li>
@@ -39,9 +39,9 @@ window.addEventListener('devicemotion', event => {
   accelerationY.textContent = event.acceleration.y;
   accelerationZ.textContent = event.acceleration.z;
 
-  accelerationIncludingGravityX.textContent = event.accelerationIncludingGravigy.x;
-  accelerationIncludingGravityY.textContent = event.accelerationIncludingGravigy.y;
-  accelerationIncludingGravityZ.textContent = event.accelerationIncludingGravigy.z;
+  accelerationIncludingGravityX.textContent = event.accelerationIncludingGravity.x;
+  accelerationIncludingGravityY.textContent = event.accelerationIncludingGravity.y;
+  accelerationIncludingGravityZ.textContent = event.accelerationIncludingGravity.z;
 
   rotationRateAlpha.textContent = event.rotationRate.alpha;
   rotationRateBeta.textContent = event.rotationRate.beta;
